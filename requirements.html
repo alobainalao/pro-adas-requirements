@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>PRO-ADAS — Product Discovery</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+  --bg:#020617;
+  --card:#0f172a;
+  --card2:#111827;
+  --border:rgba(255,255,255,0.08);
+
+  --primary:#38bdf8;
+  --primary2:#2563eb;
+
+  --text:#f8fafc;
+  --muted:#94a3b8;
+
+  --success:#10b981;
+
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:'Inter',sans-serif;
+
+  background:
+  radial-gradient(circle at top left,#2563eb22,transparent 28%),
+  radial-gradient(circle at bottom right,#06b6d422,transparent 28%),
+  linear-gradient(135deg,#020617,#0f172a,#111827);
+
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ================================================= */
+/* NAVBAR */
+/* ================================================= */
+
+.navbar{
+
+  width:100%;
+  padding:24px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  position:sticky;
+  top:0;
+
+  z-index:100;
+
+  backdrop-filter:blur(14px);
+
+  background:rgba(2,6,23,0.55);
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+
+.brand{
+
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.logo{
+
+  width:46px;
+  height:46px;
+
+  border-radius:16px;
+
+  background:
+  linear-gradient(135deg,#0ea5e9,#2563eb);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-weight:800;
+  font-size:1rem;
+
+  box-shadow:
+  0 15px 35px rgba(37,99,235,0.45);
+}
+
+.brand-text h1{
+  font-size:1rem;
+  font-weight:700;
+}
+
+.brand-text span{
+  color:var(--muted);
+  font-size:0.82rem;
+}
+
+.lang-selector select{
+
+  background:rgba(255,255,255,0.04);
+
+  border:1px solid var(--border);
+
+  color:rgb(69, 5, 244);
+
+  padding:12px 18px;
+
+  border-radius:14px;
+
+  outline:none;
+
+  font-size:0.95rem;
+}
+
+/* ================================================= */
+/* HERO */
+/* ================================================= */
+
+.hero{
+
+  position:relative;
+  padding:90px 8% 60px;
+}
+
+.hero::before{
+
+  content:'';
+
+  position:absolute;
+
+  width:600px;
+  height:600px;
+
+  border-radius:50%;
+
+  background:#0ea5e922;
+
+  filter:blur(120px);
+
+  top:-280px;
+  right:-120px;
+}
+
+.hero-grid{
+
+  position:relative;
+  z-index:2;
+
+  max-width:1300px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:60px;
+  align-items:center;
+}
+
+.badge{
+
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  background:rgba(14,165,233,0.08);
+
+  border:1px solid rgba(14,165,233,0.25);
+
+  padding:12px 18px;
+
+  border-radius:999px;
+
+  color:#7dd3fc;
+
+  font-size:0.9rem;
+
+  margin-bottom:28px;
+}
+
+.hero h1{
+
+  font-size:4.2rem;
+  line-height:1;
+
+  letter-spacing:-2px;
+
+  margin-bottom:28px;
+
+  font-weight:800;
+}
+
+.hero h1 span{
+
+  background:
+  linear-gradient(90deg,#38bdf8,#60a5fa,#22d3ee);
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+  color:#cbd5e1;
+
+  line-height:1.9;
+
+  max-width:760px;
+
+  font-size:1.05rem;
+}
+
+/* ================================================= */
+/* HERO CARD */
+/* ================================================= */
+
+.hero-card{
+
+  background:
+  linear-gradient(
+  180deg,
+  rgba(255,255,255,0.06),
+  rgba(255,255,255,0.03)
+  );
+
+  border:1px solid var(--border);
+
+  border-radius:32px;
+
+  padding:34px;
+
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+  0 25px 60px rgba(0,0,0,0.45);
+}
+
+.hero-card h3{
+
+  color:#38bdf8;
+
+  margin-bottom:28px;
+
+  font-size:1.25rem;
+}
+
+.feature{
+
+  display:flex;
+  gap:16px;
+
+  margin-bottom:24px;
+}
+
+.feature-icon{
+
+  width:42px;
+  height:42px;
+
+  border-radius:14px;
+
+  background:
+  linear-gradient(135deg,#0ea5e9,#2563eb);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-weight:700;
+
+  flex-shrink:0;
+}
+
+.feature-text{
+
+  color:#cbd5e1;
+  line-height:1.7;
+}
+
+/* ================================================= */
+/* MAIN */
+/* ================================================= */
+
+.container{
+
+  max-width:1300px;
+
+  margin:auto;
+
+  padding:20px 8% 100px;
+}
+
+.section{
+
+  background:
+  linear-gradient(
+  180deg,
+  rgba(255,255,255,0.045),
+  rgba(255,255,255,0.03)
+  );
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  border-radius:32px;
+
+  padding:38px;
+
+  margin-bottom:32px;
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+  0 20px 40px rgba(0,0,0,0.25);
+}
+
+.section-header{
+
+  display:flex;
+  align-items:flex-start;
+
+  gap:18px;
+
+  margin-bottom:34px;
+}
+
+.section-number{
+
+  width:52px;
+  height:52px;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(135deg,#0284c7,#2563eb);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-weight:700;
+
+  box-shadow:
+  0 12px 30px rgba(37,99,235,0.4);
+}
+
+.section h2{
+
+  font-size:1.6rem;
+  margin-bottom:6px;
+}
+
+.section-description{
+
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.grid{
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:26px;
+}
+
+.question{
+
+  margin-bottom:24px;
+}
+
+.question label{
+
+  display:block;
+
+  margin-bottom:12px;
+
+  font-weight:600;
+
+  line-height:1.7;
+
+  color:#f1f5f9;
+}
+
+.question small{
+
+  display:block;
+
+  margin-top:10px;
+
+  color:#64748b;
+
+  line-height:1.6;
+}
+
+/* ================================================= */
+/* INPUTS */
+/* ================================================= */
+
+input,
+textarea,
+select{
+
+  width:100%;
+
+  background:#020617;
+
+  border:1px solid #1e293b;
+
+  border-radius:18px;
+
+  padding:18px;
+
+  color:white;
+
+  outline:none;
+
+  transition:0.25s;
+
+  font-size:0.97rem;
+}
+
+textarea{
+
+  min-height:135px;
+
+  resize:vertical;
+
+  line-height:1.8;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+  border-color:#38bdf8;
+
+  box-shadow:
+  0 0 0 4px rgba(56,189,248,0.12);
+
+  transform:translateY(-1px);
+}
+
+/* ================================================= */
+/* TAGS */
+/* ================================================= */
+
+.tags{
+
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:12px;
+}
+
+.tag{
+
+  padding:10px 14px;
+
+  border-radius:999px;
+
+  background:rgba(56,189,248,0.08);
+
+  border:1px solid rgba(56,189,248,0.18);
+
+  color:#7dd3fc;
+
+  font-size:0.82rem;
+}
+
+/* ================================================= */
+/* BUTTON */
+/* ================================================= */
+
+.submit-container{
+
+  text-align:center;
+  margin-top:60px;
+}
+
+.submit-btn{
+
+  background:
+  linear-gradient(90deg,#0ea5e9,#2563eb);
+
+  border:none;
+
+  padding:20px 46px;
+
+  border-radius:20px;
+
+  color:white;
+
+  font-size:1rem;
+  font-weight:700;
+
+  cursor:pointer;
+
+  box-shadow:
+  0 20px 40px rgba(37,99,235,0.45);
+
+  transition:0.3s;
+}
+
+.submit-btn:hover{
+
+  transform:translateY(-4px) scale(1.01);
+}
+
+.footer-note{
+
+  margin-top:18px;
+
+  color:var(--muted);
+
+  line-height:1.8;
+}
+
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
+
+@media(max-width:980px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:3rem;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .navbar{
+    padding:18px 24px;
+  }
+
+  .hero{
+    padding:60px 24px;
+  }
+
+  .container{
+    padding:20px 24px 80px;
+  }
+
+  .hero h1{
+    font-size:2.3rem;
+  }
+
+  .section{
+    padding:26px;
+  }
+
+}
+
+/* ================= MODAL FIX (SIN CAMBIAR TU DISEÑO) ================= */
+
+#reportModal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+  z-index:9999;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+}
+
+#reportModal.active{
+  display:flex;
+}
+
+.modal-box{
+  width:100%;
+  max-width:1000px;
+  background:#ffffff;
+  border-radius:20px;
+  padding:20px;
+
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+
+  max-height:90vh;
+}
+
+#reportFrame{
+  width:100%;
+  height:70vh;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+}
+
+.modal-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+}
+
+.btn-close{
+  padding:10px 14px;
+  border-radius:10px;
+  border:none;
+  background:#e5e7eb;
+  cursor:pointer;
+}
+
+.btn-send{
+  padding:10px 14px;
+  border-radius:10px;
+  border:none;
+  background:#2563eb;
+  color:white;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================================================= -->
+<!-- NAVBAR -->
+<!-- ================================================= -->
+
+<div class="navbar">
+
+  <div class="brand">
+
+    <div class="logo">
+      PA
+    </div>
+
+    <div class="brand-text">
+      <h1>PRO-ADAS</h1>
+      <span id="navSubtitle">
+        Product Discovery Interview
+      </span>
+    </div>
+
+  </div>
+
+  <div class="lang-selector">
+
+    <select id="languageSelector">
+      <option value="es">Español</option>
+      <option value="en">English</option>
+    </select>
+
+  </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- HERO -->
+<!-- ================================================= -->
+
+<section class="hero">
+
+  <div class="hero-grid">
+
+    <div>
+
+      <div class="badge" id="heroBadge">
+        Product Discovery Session
+      </div>
+
+      <h1 id="heroTitle">
+        Plataforma inteligente tipo
+        <span>Uber</span>
+        para calibraciones ADAS
+      </h1>
+
+      <p id="heroText">
+        Este documento tiene como objetivo comprender completamente el flujo operativo, técnico y comercial necesario para construir una plataforma moderna de calibraciones ADAS, incluyendo asignación de técnicos, rastreo en tiempo real, automatización operativa y experiencia tipo Uber.
+      </p>
+
+    </div>
+
+    <div class="hero-card">
+
+      <h3 id="heroCardTitle">
+        Objetivos de la sesión
+      </h3>
+
+      <div class="feature">
+        <div class="feature-icon">1</div>
+        <div class="feature-text" id="feature1">
+          Comprender el flujo operativo completo del negocio.
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">2</div>
+        <div class="feature-text" id="feature2">
+          Identificar qué tan cercana debe ser la experiencia respecto a Uber.
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">3</div>
+        <div class="feature-text" id="feature3">
+          Definir funcionalidades prioritarias del MVP.
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">4</div>
+        <div class="feature-text" id="feature4">
+          Obtener suficiente información para diseñar un demo convincente.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- FORM -->
+<!-- ================================================= -->
+
+<div class="container">
+
+<form id="discoveryForm">
+
+<!-- ================================================= -->
+<!-- SECTION 1 -->
+<!-- ================================================= -->
+
+<div class="section">
+
+  <div class="section-header">
+
+    <div class="section-number">01</div>
+
+    <div>
+
+      <h2 id="section1Title">
+        Objetivos del negocio
+      </h2>
+
+      <div class="section-description" id="section1Desc">
+        Comprender la operación actual y el problema principal que resolverá la plataforma.
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="question">
+    <label>
+      ¿Qué problema principal debe resolver la plataforma?
+    </label>
+
+    <textarea name="Problema principal"></textarea>
+  </div>
+
+  <div class="question">
+    <label>
+      ¿Cómo funciona actualmente el proceso de calibración?
+    </label>
+
+    <textarea name="Flujo actual"></textarea>
+  </div>
+
+  <div class="question">
+    <label>
+      ¿Qué partes del proceso actual generan más fricción, retrasos o pérdidas?
+    </label>
+
+    <textarea name="Fricciones operativas"></textarea>
+  </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- SECTION 2 -->
+<!-- ================================================= -->
+
+<div class="section">
+
+  <div class="section-header">
+
+    <div class="section-number">02</div>
+
+    <div>
+
+      <h2>
+        Experiencia tipo Uber
+      </h2>
+
+      <div class="section-description">
+        Identificar exactamente cómo debe funcionar la experiencia operativa y del cliente.
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="grid">
+
+    <div class="question">
+
+      <label>
+        ¿El cliente debe poder solicitar servicios instantáneamente?
+      </label>
+
+      <textarea name="Solicitud instantanea"></textarea>
+
+    </div>
+
+    <div class="question">
+
+      <label>
+        ¿Cómo debería asignarse automáticamente el técnico?
+      </label>
+
+      <textarea name="Asignacion de tecnicos"></textarea>
+
+      <small>
+        Proximidad, disponibilidad, agenda, zona, especialidad, prioridad, etc.
+      </small>
+
+    </div>
+
+    <div class="question">
+
+      <label>
+        ¿Qué tan importante es el rastreo GPS en tiempo real?
+      </label>
+
+      <textarea name="GPS en tiempo real"></textarea>
+
+    </div>
+
+    <div class="question">
+
+      <label>
+        ¿Qué estados debería tener el servicio?
+      </label>
+
+      <textarea name="Estados del servicio"></textarea>
+
+      <div class="tags">
+
+        <div class="tag">Solicitado</div>
+        <div class="tag">Asignado</div>
+        <div class="tag">En camino</div>
+        <div class="tag">En sitio</div>
+        <div class="tag">Calibrando</div>
+        <div class="tag">Finalizado</div>
+
+      </div>
+
+    </div>
+
+    <div class="question">
+
+      <label>
+        ¿El cliente debe visualizar ETA, ubicación y progreso del técnico?
+      </label>
+
+      <textarea name="ETA y tracking"></textarea>
+
+    </div>
+
+    <div class="question">
+
+      <label>
+        ¿Qué evidencias debe subir el técnico?
+      </label>
+
+      <textarea name="Evidencias"></textarea>
+
+      <small>
+        Fotos, videos, PDFs, firmas digitales, resultados, diagnósticos, etc.
+      </small>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- SECTION 3 -->
+<!-- ================================================= -->
+
+<div class="section">
+
+  <div class="section-header">
+
+    <div class="section-number">03</div>
+
+    <div>
+
+      <h2>
+        Requerimientos técnicos
+      </h2>
+
+      <div class="section-description">
+        Definir el alcance técnico real del sistema y evitar ambigüedades.
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="grid">
+
+    <div class="question">
+
+      <label>
+        ¿La plataforma será web, móvil o ambas?
+      </label>
+
+      <textarea name="Plataformas"></textarea>
+
+    </div>
+
+    <div class="question">
+
+      <label>
+        ¿Los técnicos deben trabajar sin conexión?
+      </label>
+
+      <textarea name="Modo offline"></textarea>
+
+    </div>
+
+    <div class="question">
+
+      <label>
+        ¿Qué tipos de usuarios existirán?
+      </label>
+
+      <textarea name="Roles"></textarea>
+
+      <small>
+        Admin, dispatcher, técnico, supervisor, cliente, etc.
+      </small>
+
+    </div>
+
+    <div class="question">
+
+      <label>
+        ¿Qué permisos o restricciones tendrá cada rol?
+      </label>
+
+      <textarea name="Permisos"></textarea>
+
+    </div>
+
+    <div class="question">
+
+      <label>
+        ¿Qué métricas o dashboards son críticos?
+      </label>
+
+      <textarea name="Dashboards"></textarea>
+
+    </div>
+
+    <div class="question">
+
+      <label>
+        ¿Qué integraciones externas son necesarias?
+      </label>
+
+      <textarea name="Integraciones"></textarea>
+
+      <small>
+        Stripe, QuickBooks, CRM, ERP, calendarios, APIs internas, etc.
+      </small>
+
+    </div>
+
+    <div class="question">
+
+      <label>
+        ¿Qué tipo de notificaciones necesita el sistema?
+      </label>
+
+      <textarea name="Notificaciones"></textarea>
+
+    </div>
+
+    <div class="question">
+
+      <label>
+        ¿Qué tan importante es la escalabilidad multi-ciudad o multi-sucursal?
+      </label>
+
+      <textarea name="Escalabilidad"></textarea>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- SECTION 4 -->
+<!-- ================================================= -->
+
+<div class="section">
+
+  <div class="section-header">
+
+    <div class="section-number">04</div>
+
+    <div>
+
+      <h2>
+        MVP y demo
+      </h2>
+
+      <div class="section-description">
+        Definir exactamente qué debe incluir la primera versión demostrable.
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="question">
+
+    <label>
+      ¿Cuáles son las funcionalidades imprescindibles del MVP?
+    </label>
+
+    <textarea name="MVP"></textarea>
+
+  </div>
+
+  <div class="question">
+
+    <label>
+      ¿Qué funcionalidades pueden esperar a una segunda fase?
+    </label>
+
+    <textarea name="Funcionalidades futuras"></textarea>
+
+  </div>
+
+  <div class="question">
+
+    <label>
+      ¿Qué funcionalidad haría que el demo sea impactante?
+    </label>
+
+    <textarea name="Funcionalidad wow"></textarea>
+
+  </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- BUTTON -->
+<!-- ================================================= -->
+
+<div class="submit-container">
+
+  <button type="submit" class="submit-btn" id="submitBtn">
+    Generar reporte
+  </button>
+
+  <div class="footer-note">
+    El sistema generará automáticamente un reporte estructurado listo para enviar por correo.
+  </div>
+
+</div>
+
+</form>
+
+</div>
+
+<!-- ================= MODAL ================= -->
+<div id="reportModal">
+  <div class="modal-box">
+
+    <h2>Vista previa del reporte</h2>
+
+    <iframe id="reportFrame"></iframe>
+
+    <div class="modal-actions">
+      <button class="btn-close" onclick="closeModal()">Cerrar</button>
+      <button class="btn-send" id="sendEmailBtn">Enviar</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  (function() {
+    emailjs.init("bYgA3Wldey2UAFZkG");
+  })();
+</script>
+
+<script>
+
+const SERVICE_ID = "service_6vwcufv";
+const TEMPLATE_ID = "template_qhbbucc";
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const form = document.getElementById("discoveryForm");
+
+  /* ================= GENERAR Y ABRIR MODAL ================= */
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    let html = `
+      <html>
+      <body style="font-family:Arial;padding:20px;background:#f8fafc;">
+        <h2 style="color:#0f172a;">PRO-ADAS Report Preview</h2>
+    `;
+
+    for (const [k, v] of formData.entries()) {
+      html += `
+        <div style="background:white;padding:12px;margin:10px 0;border-radius:10px;border:1px solid #e5e7eb;">
+          <b style="color:#2563eb;">${k}</b><br>
+          ${v || "-"}
+        </div>
+      `;
+    }
+
+    html += `</body></html>`;
+
+    document.getElementById("reportFrame").srcdoc = html;
+    document.getElementById("reportModal").style.display = "flex";
+  });
+
+  /* ================= ENVIAR EMAIL ================= */
+  document.getElementById("sendEmailBtn").addEventListener("click", async function () {
+
+    const formData = new FormData(form);
+
+    // 🔥 Payload limpio (ESTO ES LO IMPORTANTE)
+    let payload = {
+      to_email: "alobainalao@gmail.com"
+    };
+
+    for (const [key, value] of formData.entries()) {
+      payload[key] = value || "-";
+    }
+
+    try {
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, payload);
+
+      alert("Reporte enviado correctamente");
+      closeModal();
+
+    } catch (err) {
+      console.error(err);
+      alert("Error al enviar el reporte");
+    }
+
+  });
+
+});
+
+/* ================= CERRAR MODAL ================= */
+function closeModal() {
+  document.getElementById("reportModal").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
